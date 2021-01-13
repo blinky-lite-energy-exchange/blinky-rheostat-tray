@@ -1,7 +1,7 @@
 {
     "node-red": {
         "name": "node-red",
-        "version": "1.2.6-git",
+        "version": "1.2.7-git",
         "local": false,
         "nodes": {
             "inject": {
@@ -360,7 +360,7 @@
     },
     "node-red-dashboard": {
         "name": "node-red-dashboard",
-        "version": "2.25.0",
+        "version": "2.26.2",
         "local": true,
         "nodes": {
             "ui_base": {
@@ -626,6 +626,23 @@
                 "local": true,
                 "module": "node-red-node-tail",
                 "file": "/home/pi/blinky-stepper-tray/node_modules/node-red-node-tail/28-tail.js"
+            }
+        }
+    },
+    "node-red-contrib-gzip": {
+        "name": "node-red-contrib-gzip",
+        "version": "0.0.3",
+        "local": true,
+        "nodes": {
+            "markdown": {
+                "name": "markdown",
+                "types": [
+                    "gzip"
+                ],
+                "enabled": true,
+                "local": true,
+                "module": "node-red-contrib-gzip",
+                "file": "/home/pi/blinky-stepper-tray/node_modules/node-red-contrib-gzip/lib/gzip.js"
             }
         }
     }
