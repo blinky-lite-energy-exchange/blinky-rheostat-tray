@@ -1,13 +1,13 @@
 {
   "deviceType": "blinky-stepper",
-  "name": "02",
+  "name": "01",
   "arcPeriod": 60000,
   "timeStamp": 1584283380359,
   "lastArchive": 1584283329231,
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 56,
+    "value": 48,
     "unit": "/70",
     "alarm": {
       "value": 0,
@@ -27,10 +27,10 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -54,
+    "value": -62,
     "unit": "dBm",
     "alarm": {
-      "value": 0,
+      "value": 1,
       "limits": {
         "lolo": -70,
         "low": -60,
@@ -207,7 +207,7 @@
   "nrevs": {
     "action": "reading",
     "type": "scalar",
-    "value": 1,
+    "value": 5,
     "unit": "unit",
     "alarm": {
       "value": 0,
