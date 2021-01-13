@@ -1,14 +1,11 @@
 # blinky-stepper tray
 ## need to add .env file with the following
-PROJECT=blinky-lite  
-DEVICETYPEA=blinky-stepper  
-DEVICENAMEA=01  
-DEVICETYPEB=blinky-stepper  
-DEVICENAMEB=02  
-MQTTCLIENTID=blinky-stepper-tray-01  
-MQTTSERVERIP=hip-lifeguard.cloudmqtt.com  
-MQTTUSERNAME=xxx  
-MQTTPASSWORD=yyyy  
-NODEREDCONFIGSECRET=zzzz  
-  
+PROJECT=blinky-lite-v2  
+MQTTDEVICEA=blinky-lite-v2/blinky-stepper/01/+  
+MQTTDEVICEB=blinky-lite-v2/blinky-stepper/02/+  
+MQTTCLIENTID=blinky-basic-stepper-01  
+MQTTSERVERIP=xxxx  
+MQTTUSERNAME=yyyy  
+MQTTPASSWORD=zzzz  
+NODEREDCONFIGSECRET=qqqq  
 
