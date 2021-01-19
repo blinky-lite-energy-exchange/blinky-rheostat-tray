@@ -1361,7 +1361,7 @@
         "y": 820,
         "wires": [
             [
-                "f328fcb4.91dc"
+                "af9642ae.0c0da"
             ]
         ]
     },
@@ -1374,9 +1374,9 @@
         "fieldType": "msg",
         "format": "html",
         "syntax": "mustache",
-        "template": "<!-- Body HTML -->\n    <div class='container' width=\"100%\">\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/blinky-stepper?name=01\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/stairsYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Stepper 01</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/blinky-stepper?name=02\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/stairsYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Stepper 02</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/setup\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/basicYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Setup</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n    </div>",
+        "template": "<!-- Body HTML -->\n    <div class='container' width=\"100%\">\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/blinky-stepper?name={{{payload.deviceAName}}}\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/stairsYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Stepper {{{payload.deviceAName}}}</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/blinky-stepper?name={{{payload.deviceBName}}}\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/stairsYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Stepper {{{payload.deviceBName}}}</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/setup\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/basicYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Setup</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n    </div>",
         "output": "str",
-        "x": 750,
+        "x": 830,
         "y": 820,
         "wires": [
             [
@@ -1395,7 +1395,7 @@
         "syntax": "mustache",
         "template": "Blinky Stepper",
         "output": "str",
-        "x": 470,
+        "x": 550,
         "y": 820,
         "wires": [
             [
@@ -1414,7 +1414,7 @@
         "syntax": "mustache",
         "template": "        useWebSockets(false);\n        function onDocumentReady()\n        {\n        }\n        function onWebSocketOpen()\n        {\n        }\n        function onWebSocketClose()\n        {\n            \n        }\n        function onWebSocketMessage(msg)\n        {\n        }\n\n",
         "output": "str",
-        "x": 330,
+        "x": 410,
         "y": 820,
         "wires": [
             [
@@ -1433,7 +1433,7 @@
         "syntax": "mustache",
         "template": "stairsYellow.png",
         "output": "str",
-        "x": 610,
+        "x": 690,
         "y": 820,
         "wires": [
             [
@@ -1451,7 +1451,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 90,
-        "y": 720,
+        "y": 780,
         "wires": [
             [
                 "ca68de71.c19fe"
@@ -1469,8 +1469,8 @@
         "syntax": "mustache",
         "template": "<!-- Body HTML -->\n",
         "output": "str",
-        "x": 750,
-        "y": 720,
+        "x": 830,
+        "y": 780,
         "wires": [
             [
                 "69f8be47.54abe"
@@ -1488,8 +1488,8 @@
         "syntax": "mustache",
         "template": "Blinky Stepper",
         "output": "str",
-        "x": 470,
-        "y": 720,
+        "x": 550,
+        "y": 780,
         "wires": [
             [
                 "a36869fc.6f5e58"
@@ -1507,8 +1507,8 @@
         "syntax": "mustache",
         "template": "        useWebSockets(false);\n        function onDocumentReady()\n        {\n            window.location = '/apps'\n        }\n        function onWebSocketOpen()\n        {\n        }\n        function onWebSocketClose()\n        {\n            \n        }\n        function onWebSocketMessage(msg)\n        {\n        }\n\n",
         "output": "str",
-        "x": 330,
-        "y": 720,
+        "x": 410,
+        "y": 780,
         "wires": [
             [
                 "9709fa69.9daac8"
@@ -1526,8 +1526,8 @@
         "syntax": "mustache",
         "template": "stairsYellow.png",
         "output": "str",
-        "x": 610,
-        "y": 720,
+        "x": 690,
+        "y": 780,
         "wires": [
             [
                 "65a7590b.59a2a8"
@@ -1539,8 +1539,8 @@
         "type": "subflow:8341090a.df9758",
         "z": "c4285970.3276d8",
         "name": "",
-        "x": 890,
-        "y": 720,
+        "x": 970,
+        "y": 780,
         "wires": []
     },
     {
@@ -1548,7 +1548,7 @@
         "type": "subflow:8341090a.df9758",
         "z": "c4285970.3276d8",
         "name": "",
-        "x": 890,
+        "x": 970,
         "y": 820,
         "wires": []
     },
@@ -2832,6 +2832,96 @@
         "wires": [
             [
                 "8daa7b29.baf808"
+            ]
+        ]
+    },
+    {
+        "id": "c87aa87d.aef928",
+        "type": "inject",
+        "z": "c4285970.3276d8",
+        "name": "deviceA",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "deviceA",
+        "payload": "MQTTDEVICEA",
+        "payloadType": "env",
+        "x": 120,
+        "y": 700,
+        "wires": [
+            [
+                "fdfbcac7.35b388"
+            ]
+        ]
+    },
+    {
+        "id": "fdfbcac7.35b388",
+        "type": "function",
+        "z": "c4285970.3276d8",
+        "name": "Init device name",
+        "func": "var mqttSplit = msg.payload.split('/');\nvar deviceProps = {\n    project     :   mqttSplit[0],\n    deviceType  :   mqttSplit[1],\n    name        :   mqttSplit[2],\n};\nflow.set(msg.topic + 'Props',deviceProps);\nreturn null;",
+        "outputs": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 280,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "ea414af.510a1b8",
+        "type": "inject",
+        "z": "c4285970.3276d8",
+        "name": "deviceB",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "deviceB",
+        "payload": "MQTTDEVICEB",
+        "payloadType": "env",
+        "x": 120,
+        "y": 740,
+        "wires": [
+            [
+                "fdfbcac7.35b388"
+            ]
+        ]
+    },
+    {
+        "id": "af9642ae.0c0da",
+        "type": "function",
+        "z": "c4285970.3276d8",
+        "name": "Device Names",
+        "func": "msg.payload['deviceAName'] = flow.get('deviceAProps').name;\nmsg.payload['deviceBName'] = flow.get('deviceBProps').name;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 240,
+        "y": 820,
+        "wires": [
+            [
+                "f328fcb4.91dc"
             ]
         ]
     }
