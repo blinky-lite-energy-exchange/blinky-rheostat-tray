@@ -7,7 +7,7 @@
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 47,
+    "value": 53,
     "unit": "/70",
     "alarm": {
       "value": 0,
@@ -27,10 +27,10 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -63,
+    "value": -57,
     "unit": "dBm",
     "alarm": {
-      "value": 1,
+      "value": 0,
       "limits": {
         "lolo": -70,
         "low": -60,
@@ -207,7 +207,7 @@
   "nrevs": {
     "action": "reading",
     "type": "scalar",
-    "value": 1,
+    "value": 4,
     "unit": "unit",
     "alarm": {
       "value": 0,
