@@ -4,10 +4,12 @@
   "arcPeriod": 60000,
   "timeStamp": 1584283380359,
   "lastArchive": 1584283329231,
+  "settingInProgress": 0,
+  "archiveNow": 0,
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 53,
+    "value": 58,
     "unit": "/70",
     "alarm": {
       "value": 0,
@@ -27,7 +29,7 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -57,
+    "value": -52,
     "unit": "dBm",
     "alarm": {
       "value": 0,
@@ -47,7 +49,7 @@
   "moveMotor": {
     "action": "setting",
     "type": "scalar",
-    "value": 0,
+    "value": 1,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -64,10 +66,10 @@
       }
     }
   },
-  "resetNrevReading": {
+  "resetStepReading": {
     "action": "setting",
     "type": "scalar",
-    "value": 1,
+    "value": 0,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -87,7 +89,7 @@
   "noStepsToTurn": {
     "action": "setting",
     "type": "scalar",
-    "value": 200,
+    "value": 1000,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -96,6 +98,26 @@
         "low": -32000,
         "high": 32000,
         "hihi": 32000
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
+  "stepForward": {
+    "action": "setting",
+    "type": "scalar",
+    "value": 0,
+    "unit": "unit",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": -1,
+        "low": -1,
+        "high": 2,
+        "hihi": 2
       },
       "notify": {
         "name": "",
@@ -184,30 +206,10 @@
       }
     }
   },
-  "loopDelay": {
-    "action": "setting",
-    "type": "scalar",
-    "value": 1000,
-    "unit": "unit",
-    "alarm": {
-      "value": 0,
-      "limits": {
-        "lolo": 0,
-        "low": 0,
-        "high": 20000,
-        "hihi": 30000
-      },
-      "notify": {
-        "name": "",
-        "number": "",
-        "time": 0
-      }
-    }
-  },
-  "nrevs": {
+  "stepLocation": {
     "action": "reading",
     "type": "scalar",
-    "value": 4,
+    "value": 5200,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -216,26 +218,6 @@
         "low": -1000000,
         "high": 1000000,
         "hihi": 1000000
-      },
-      "notify": {
-        "name": "",
-        "number": "",
-        "time": 0
-      }
-    }
-  },
-  "reset": {
-    "action": "setting",
-    "type": "scalar",
-    "value": 0,
-    "unit": "unit",
-    "alarm": {
-      "value": 0,
-      "limits": {
-        "lolo": -1,
-        "low": -1,
-        "high": 2,
-        "hihi": 2
       },
       "notify": {
         "name": "",
