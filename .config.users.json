@@ -13,6 +13,7 @@
             "tours": {
                 "welcome": "2.1.0-git"
             }
-        }
+        },
+        "menu-menu-item-sidebar": true
     }
 }

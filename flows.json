@@ -257,9 +257,9 @@
         "serialConnectionDelay": "100",
         "unit_id": "1",
         "commandDelay": "1",
-        "clientTimeout": "4000",
+        "clientTimeout": "1000",
         "reconnectOnTimeout": false,
-        "reconnectTimeout": "8000",
+        "reconnectTimeout": "2000",
         "parallelUnitIdsAllowed": false
     },
     {
@@ -765,7 +765,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1260,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "9c19993afce72c6e"
@@ -805,7 +805,7 @@
             "d033193d.436d68"
         ],
         "x": 1395,
-        "y": 220,
+        "y": 260,
         "wires": []
     },
     {
@@ -840,7 +840,7 @@
         "id": "dfd383f6b74e0cdf",
         "type": "modbus-flex-getter",
         "z": "ce79ef46f01ee91a",
-        "name": "local getter Flex",
+        "name": "Modbus Read",
         "showStatusActivities": true,
         "showErrors": true,
         "logIOActivities": false,
@@ -888,13 +888,13 @@
         "id": "26de5f73575775f7",
         "type": "modbus-flex-write",
         "z": "ce79ef46f01ee91a",
-        "name": "local setter flex",
-        "showStatusActivities": false,
-        "showErrors": false,
+        "name": "Modbus set",
+        "showStatusActivities": true,
+        "showErrors": true,
         "server": "9bf2bda7e005d087",
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 540,
+        "x": 530,
         "y": 340,
         "wires": [
             [],
@@ -1128,7 +1128,7 @@
         "finalize": "",
         "libs": [],
         "x": 1040,
-        "y": 180,
+        "y": 220,
         "wires": [
             [
                 "dfb8a6f09ed18976",
@@ -1153,7 +1153,7 @@
             "f0c1e263384a520f"
         ],
         "x": 915,
-        "y": 180,
+        "y": 220,
         "wires": [
             [
                 "13f60be205b89b7d"
@@ -1263,13 +1263,13 @@
         "id": "647f248407479387",
         "type": "modbus-flex-write",
         "z": "ce79ef46f01ee91a",
-        "name": "local setter flex",
-        "showStatusActivities": false,
-        "showErrors": false,
+        "name": "Modbus init",
+        "showStatusActivities": true,
+        "showErrors": true,
         "server": "9bf2bda7e005d087",
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 1520,
+        "x": 1510,
         "y": 60,
         "wires": [
             [],
@@ -1666,7 +1666,7 @@
         "finalize": "",
         "libs": [],
         "x": 1250,
-        "y": 140,
+        "y": 180,
         "wires": [
             [
                 "5eec44615361be25"
@@ -1694,7 +1694,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 1490,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "34c3e2a42c09ea88"
@@ -1713,7 +1713,7 @@
         "finalize": "",
         "libs": [],
         "x": 1670,
-        "y": 200,
+        "y": 240,
         "wires": []
     },
     {
@@ -1749,7 +1749,7 @@
         "expiry": "",
         "broker": "cf9f84d0.6fba78",
         "x": 1490,
-        "y": 140,
+        "y": 180,
         "wires": []
     },
     {
@@ -1854,6 +1854,38 @@
                 "961b85c2472cee35"
             ]
         ]
+    },
+    {
+        "id": "bf552c02a1ddf527",
+        "type": "catch",
+        "z": "ce79ef46f01ee91a",
+        "name": "",
+        "scope": [
+            "647f248407479387"
+        ],
+        "uncaught": false,
+        "x": 1550,
+        "y": 120,
+        "wires": [
+            [
+                "b96374fabc58144c"
+            ]
+        ]
+    },
+    {
+        "id": "b96374fabc58144c",
+        "type": "function",
+        "z": "ce79ef46f01ee91a",
+        "name": "Modbus Init fail",
+        "func": "if (msg.payload.address == 0)\n{\n    flow.get(\"device\").settingInProgress = 0;\n}\nreturn msg;",
+        "outputs": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1720,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "68f91193.6031a",
