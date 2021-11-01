@@ -29,7 +29,7 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -27,
+    "value": -29,
     "unit": "dBm",
     "alarm": {
       "value": 0,
@@ -49,7 +49,7 @@
   "moveMotor": {
     "action": "setting",
     "type": "scalar",
-    "value": 0,
+    "value": 1,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -89,7 +89,7 @@
   "noStepsToTurn": {
     "action": "setting",
     "type": "scalar",
-    "value": 10,
+    "value": 1000,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -109,7 +109,7 @@
   "stepForward": {
     "action": "setting",
     "type": "scalar",
-    "value": 0,
+    "value": 1,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -129,7 +129,7 @@
   "stepDelayuS": {
     "action": "setting",
     "type": "scalar",
-    "value": 10000,
+    "value": 1000,
     "unit": "uS",
     "alarm": {
       "value": 0,
