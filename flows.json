@@ -1,8 +1,8 @@
 [
     {
-        "id": "ce79ef46f01ee91a",
+        "id": "5d451db1ecd066ae",
         "type": "tab",
-        "label": "DeviceA",
+        "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
@@ -119,6 +119,172 @@
         "out": [],
         "env": [],
         "color": "#DDAA99"
+    },
+    {
+        "id": "e19ee6e24a2c4f85",
+        "type": "subflow",
+        "name": "Check Setting",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "839707ca0e7a1c23"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 300,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "839707ca0e7a1c23",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "node-red/status.svg"
+    },
+    {
+        "id": "98acb112015948ed",
+        "type": "subflow",
+        "name": "Create Readings",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "e8c0741f2a621fb3"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 400,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "e8c0741f2a621fb3",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 400,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "e8c0741f2a621fb3",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "node-red/status.svg"
+    },
+    {
+        "id": "d096205f9f3f50fe",
+        "type": "subflow",
+        "name": "Create Setting",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "6b2e0efdc66e033e"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 360,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "6b2e0efdc66e033e",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 360,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "6b2e0efdc66e033e",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 360,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "6b2e0efdc66e033e",
+                        "port": 2
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "node-red/status.svg"
+    },
+    {
+        "id": "ae10b0b7c4fa541c",
+        "type": "subflow",
+        "name": "Init Cube",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "7af8534cec3524e8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 340,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "7af8534cec3524e8",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "node-red/status.svg"
     },
     {
         "id": "6ad7c930.1a06b8",
@@ -238,29 +404,23 @@
         "wholemsg": "false"
     },
     {
-        "id": "9bf2bda7e005d087",
-        "type": "modbus-client",
-        "name": "Cube",
-        "clienttype": "simpleser",
-        "bufferCommands": false,
-        "stateLogEnabled": false,
-        "queueLogEnabled": false,
-        "tcpHost": "${SLAVEIP}",
-        "tcpPort": "${SLAVEPORT}",
-        "tcpType": "DEFAULT",
-        "serialPort": "$(SERIALPORT)",
-        "serialType": "RTU-BUFFERD",
-        "serialBaudrate": "19200",
-        "serialDatabits": "8",
-        "serialStopbits": "1",
-        "serialParity": "none",
-        "serialConnectionDelay": "100",
-        "unit_id": "1",
-        "commandDelay": "1",
-        "clientTimeout": "1000",
-        "reconnectOnTimeout": false,
-        "reconnectTimeout": "2000",
-        "parallelUnitIdsAllowed": false
+        "id": "0ffebf4de6e08b68",
+        "type": "serial-port",
+        "serialport": "$(SERIALPORT)",
+        "serialbaud": "19200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "$(SERIALBUFSIZE)",
+        "bin": "bin",
+        "out": "count",
+        "addchar": "",
+        "responsetimeout": "2000"
     },
     {
         "id": "c104210d.418eb",
@@ -472,11 +632,82 @@
         ]
     },
     {
-        "id": "e20ca15fb632434b",
+        "id": "839707ca0e7a1c23",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "e19ee6e24a2c4f85",
+        "name": "Check Setting",
+        "func": "device = global.get('device');\ndevice.settingInProgress = 0;\nswitch(msg.payload.address)\n{\n    case 1:\n        device.moveMotor.value              = msg.payload.value;\n        break;\n    case 2:\n        device.resetStepReading.value       = msg.payload.value;\n        break;\n    case 3:\n        device.noStepsToTurn.value          = msg.payload.value;\n        break;\n    case 4:\n        device.stepForward.value            = msg.payload.value;\n        break;\n    case 5:\n        device.stepDelayuS.value            = msg.payload.value;\n        break;\n    case 6:\n        device.stayAwakeAfterRotation.value = msg.payload.value;\n        break;\n    case 7:\n        device.resolution.value             = msg.payload.value;\n        break;\n    case 8:\n        device.delayAfterRotationmS.value   = msg.payload.value;\n        break;\n    default:\n        break;\n}\nreturn {topic:'settingCompleted', payload:true};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e8c0741f2a621fb3",
+        "type": "function",
+        "z": "98acb112015948ed",
+        "name": "Create Readings",
+        "func": "var device = global.get('device');\nif (device.archiveNow > 0) return null;\nvar initCube             = msg.payload[0];\ndevice.moveMotor.value              = msg.payload[1];\ndevice.resetStepReading.value       = msg.payload[2];\ndevice.noStepsToTurn.value          = msg.payload[3];\ndevice.stepForward.value            = msg.payload[4];\ndevice.stepDelayuS.value            = msg.payload[5];\ndevice.stayAwakeAfterRotation.value = msg.payload[6];\ndevice.resolution.value             = msg.payload[7];\ndevice.delayAfterRotationmS.value   = msg.payload[8];\ndevice.stepLocation.value           = msg.payload[9];\nvar initCubeMsg = null;\nif (initCube == 1)\n{\n    initCubeMsg = {topic:\"initCube\",payload:true};\n    device.settingInProgress = 1;\n}\nreturn  [{topic:'newSettingDone', payload:true},initCubeMsg];\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 80,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6b2e0efdc66e033e",
+        "type": "function",
+        "z": "d096205f9f3f50fe",
+        "name": "Create Setting",
+        "func": "var device = global.get('device');\nvar blinkyBusSettingMsg = \n{\n    topic : msg.topic, \n    payload : { value: msg.payload.value,  'address': -1  } \n}\nvar blinkyBusMessage = false;\nswitch(msg.payload.attr)\n{\n    case 'moveMotor':\n        blinkyBusSettingMsg.payload.address = 1;\n        blinkyBusMessage = true;\n        break;\n    case 'resetStepReading':\n        blinkyBusSettingMsg.payload.address = 2;\n        blinkyBusMessage = true;\n        break;\n    case 'noStepsToTurn':\n        blinkyBusSettingMsg.payload.address = 3;\n        blinkyBusMessage = true;\n        break;\n    case 'stepForward':\n        blinkyBusSettingMsg.payload.address = 4;\n        blinkyBusMessage = true;\n        break;\n    case 'stepDelayuS':\n        blinkyBusSettingMsg.payload.address = 5;\n        blinkyBusMessage = true;\n        break;\n    case 'stayAwakeAfterRotation':\n        blinkyBusSettingMsg.payload.address = 6;\n        blinkyBusMessage = true;\n        break;\n    case 'resolution':\n        blinkyBusSettingMsg.payload.address = 7;\n        blinkyBusMessage = true;\n        break;\n    case 'delayAfterRotationmS':\n        blinkyBusSettingMsg.payload.address = 8;\n        blinkyBusMessage = true;\n        break;\n    default:\n        break;\n}\nvar msgArray = [null,null,null];\nif (blinkyBusMessage)\n{\n    device.settingInProgress = 1;\n    var settingInProgressMsg = {topic:'settingInProgress', payload:true};\n    msgArray = [blinkyBusSettingMsg, settingInProgressMsg, null];\n    \n}\nelse\n{\n    device.settingInProgress = 0;\n    msgArray = [null,null,{topic:'settingDone', payload:true}];\n}\nreturn msgArray;\n",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7af8534cec3524e8",
+        "type": "function",
+        "z": "ae10b0b7c4fa541c",
+        "name": "Init cube",
+        "func": "var device = global.get('device');\nvar msgs = [];\nmsgs[0] = {\"address\":0,\"value\":0};\nmsgs[1] = {\"address\":1,\"value\":device.moveMotor.value};\nmsgs[2] = {\"address\":2,\"value\":device.resetStepReading.value};\nmsgs[3] = {\"address\":3,\"value\":device.noStepsToTurn.value};\nmsgs[4] = {\"address\":4,\"value\":device.stepForward.value};\nmsgs[5] = {\"address\":5,\"value\":device.stepDelayuS.value};\nmsgs[6] = {\"address\":6,\"value\":device.stayAwakeAfterRotation.value};\nmsgs[7] = {\"address\":7,\"value\":device.resolution.value};\nmsgs[8] = {\"address\":8,\"value\":device.delayAfterRotationmS.value};\n//must be the last!\nmsgs[9] = {\"address\":-1,\"value\":0};\nreturn {topic : 'initCube', payload: msgs};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9cc7152684b8d1b6",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
         "name": "Save device config in Memory",
-        "func": "msg.payload.settingInProgress = 1;\nflow.set('device', msg.payload);\nreturn msg;",
+        "func": "msg.payload.settingInProgress = 1;\nglobal.set('device', msg.payload);\nglobal.set('cubeInit', 1);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -486,14 +717,14 @@
         "y": 60,
         "wires": [
             [
-                "04fec5b44db8b4da"
+                "6d902f5b8885ea57"
             ]
         ]
     },
     {
-        "id": "fc2eb29072424bfd",
+        "id": "467714e299a8707d",
         "type": "inject",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "deviceA",
         "props": [
             {
@@ -515,14 +746,14 @@
         "y": 60,
         "wires": [
             [
-                "30b018e34b199814"
+                "ad23075cf420e925"
             ]
         ]
     },
     {
-        "id": "c7d1bc1a67fe9dc2",
+        "id": "832e07b35db805b6",
         "type": "file in",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Read device config",
         "filename": "",
         "format": "utf8",
@@ -533,14 +764,14 @@
         "y": 60,
         "wires": [
             [
-                "27ecc7397c9f962d"
+                "f6038ba15653b096"
             ]
         ]
     },
     {
-        "id": "27ecc7397c9f962d",
+        "id": "f6038ba15653b096",
         "type": "json",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "property": "payload",
         "action": "obj",
@@ -549,16 +780,16 @@
         "y": 60,
         "wires": [
             [
-                "e20ca15fb632434b"
+                "9cc7152684b8d1b6"
             ]
         ]
     },
     {
-        "id": "30b018e34b199814",
+        "id": "ad23075cf420e925",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Init flow Variables",
-        "func": "var mqttSplit = msg.payload.split('/');\nvar deviceProps = {\n    project     :   mqttSplit[0],\n    deviceType  :   mqttSplit[1],\n    name        :   mqttSplit[2],\n    configFile  :   mqttSplit[1] + '-' + mqttSplit[2] + '.json',\n    mapFile     :   mqttSplit[1] + '-' + mqttSplit[2] + '-map.json'\n};\nflow.set('deviceProps',deviceProps);\nreturn {topic: 'readFile', 'filename':deviceProps.configFile};",
+        "func": "var mqttSplit = msg.payload.split('/');\nvar deviceProps = {\n    project     :   mqttSplit[0],\n    deviceType  :   mqttSplit[1],\n    name        :   mqttSplit[2],\n    configFile  :   mqttSplit[1] + '-' + mqttSplit[2] + '.json',\n    mapFile     :   mqttSplit[1] + '-' + mqttSplit[2] + '-map.json'\n};\nglobal.set('deviceProps',deviceProps);\nreturn {topic: 'readFile', 'filename':deviceProps.configFile};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -568,65 +799,66 @@
         "y": 60,
         "wires": [
             [
-                "c7d1bc1a67fe9dc2"
+                "832e07b35db805b6"
             ]
         ]
     },
     {
-        "id": "5779bd77397a4f17",
+        "id": "00a8e3c83fb0264e",
         "type": "file",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Init Settings",
         "filename": "",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1370,
+        "x": 1270,
         "y": 340,
         "wires": [
             []
         ]
     },
     {
-        "id": "6506eac4254d5feb",
+        "id": "7054755377685347",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Save Settings to File",
-        "func": "var jsonPretty = JSON.stringify(flow.get('device'),null,2);\nreturn {topic: msg.payload, payload:jsonPretty, 'filename':flow.get('deviceProps').configFile};",
+        "func": "var jsonPretty = JSON.stringify(global.get('device'),null,2);\nreturn {topic: msg.payload, payload:jsonPretty, 'filename':global.get('deviceProps').configFile};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1180,
+        "x": 1080,
         "y": 340,
         "wires": [
             [
-                "5779bd77397a4f17"
+                "00a8e3c83fb0264e"
             ]
         ]
     },
     {
-        "id": "080e8b7be1b3f16a",
+        "id": "32cae03eca394217",
         "type": "link in",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Device A web socket in",
         "links": [
+            "6a37b4ab.65c53c",
             "ea909034.6fb25"
         ],
         "x": 55,
         "y": 240,
         "wires": [
             [
-                "082b52af535c3321"
+                "ae798caccd780261"
             ]
         ]
     },
     {
-        "id": "80e5dcb40b864249",
+        "id": "a182e8bb4ea20900",
         "type": "json",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "property": "payload",
         "action": "obj",
@@ -635,23 +867,24 @@
         "y": 160,
         "wires": [
             [
-                "4eedce1128796fe2"
+                "9165223b031729d4"
             ]
         ]
     },
     {
-        "id": "59f0086d1e50fb2a",
+        "id": "51daa01d6c79b41d",
         "type": "exec",
-        "z": "ce79ef46f01ee91a",
-        "command": "pm2 restart red",
-        "addpay": false,
+        "z": "5d451db1ecd066ae",
+        "command": "pm2 restart ",
+        "addpay": "payload",
         "append": "",
         "useSpawn": "false",
         "timer": "",
+        "winHide": false,
         "oldrc": false,
         "name": "Restart",
-        "x": 500,
-        "y": 960,
+        "x": 700,
+        "y": 1460,
         "wires": [
             [],
             [],
@@ -659,9 +892,9 @@
         ]
     },
     {
-        "id": "dcaeb5f28d993109",
+        "id": "ab2e52c6fadc8a6d",
         "type": "switch",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Reset Tray",
         "property": "payload",
         "propertyType": "msg",
@@ -681,20 +914,20 @@
         "repair": false,
         "outputs": 2,
         "x": 310,
-        "y": 980,
+        "y": 1540,
         "wires": [
             [
-                "59f0086d1e50fb2a"
+                "453eac3f8536ca2a"
             ],
             [
-                "87dc68aae06d77df"
+                "5a9cfd4956dc1e60"
             ]
         ]
     },
     {
-        "id": "87dc68aae06d77df",
+        "id": "5a9cfd4956dc1e60",
         "type": "exec",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "command": "sudo reboot",
         "addpay": false,
         "append": "",
@@ -703,7 +936,7 @@
         "oldrc": false,
         "name": "Reboot",
         "x": 500,
-        "y": 1020,
+        "y": 1580,
         "wires": [
             [],
             [],
@@ -711,9 +944,9 @@
         ]
     },
     {
-        "id": "7f81d57f1839a56a",
+        "id": "4361b57004923b96",
         "type": "delay",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "pauseType": "delay",
         "timeout": "2",
@@ -728,36 +961,36 @@
         "allowrate": false,
         "outputs": 1,
         "x": 160,
-        "y": 980,
+        "y": 1540,
         "wires": [
             [
-                "dcaeb5f28d993109"
+                "ab2e52c6fadc8a6d"
             ]
         ]
     },
     {
-        "id": "c44e8a307e417ea3",
+        "id": "38abd8d113e0c17d",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Readings Alarm Scan",
-        "func": "if (!msg.payload) return null;\nvar device = flow.get('device');\ndevice.linkQuality.value     = global.get('linkQuality');\ndevice.signalLevel.value     = global.get('signalLevel');\nvar alarmFlagReading = scalarAlarmScan(device, 'reading');\nvar alarmFlagSetting = scalarAlarmScan(device, 'setting');\nvar newMsg = null;\nif (alarmFlagReading || alarmFlagSetting)\n{\n    newMsg = \n    {\n        topic: 'alarm',\n        payload: true\n    }\n}\nreturn newMsg;\n\nfunction getActionArray(device, type, actionType)\n{\n    var actionArray = [];\n    var keys = Object.keys(device);\n    for (var ii = 0; ii < keys.length; ++ii)\n    {\n        if (device[keys[ii]].hasOwnProperty('type'))\n        {\n            if (device[keys[ii]].type == type)\n            {\n                if (device[keys[ii]].action == actionType)\n                {\n                    actionArray.push(device[keys[ii]]);\n                }\n            }\n        }\n    }\n    return actionArray;\n}\nfunction scalarAlarmScan(device, actionType)\n{\n    var alarmFlag = false;\n    var actionArray = getActionArray(device, 'scalar', actionType);\n    if (actionArray.length > 0)\n    {\n        for (var ii = 0; ii < actionArray.length; ++ii)\n        {\n            actionArray[ii].alarm.value = 0;\n            if (!isNaN(actionArray[ii].value))\n            {\n                if (actionArray[ii].value <= actionArray[ii].alarm.limits.low)  actionArray[ii].alarm.value = 1;\n                if (actionArray[ii].value <= actionArray[ii].alarm.limits.lolo) actionArray[ii].alarm.value = 3;\n                if (actionArray[ii].value >= actionArray[ii].alarm.limits.high) actionArray[ii].alarm.value = 2;\n                if (actionArray[ii].value >= actionArray[ii].alarm.limits.hihi) actionArray[ii].alarm.value = 4;\n            }\n            if (actionArray[ii].alarm.value > 0)  alarmFlag = true\n        }\n    }\n    return alarmFlag;\n}\n",
+        "func": "if (!msg.payload) return null;\nvar device = global.get('device');\ndevice.linkQuality.value     = global.get('linkQuality');\ndevice.signalLevel.value     = global.get('signalLevel');\nvar alarmFlagReading = scalarAlarmScan(device, 'reading');\nvar alarmFlagSetting = scalarAlarmScan(device, 'setting');\nvar newMsg = null;\nif (alarmFlagReading || alarmFlagSetting)\n{\n    newMsg = \n    {\n        topic: 'alarm',\n        payload: true\n    }\n}\nreturn newMsg;\n\nfunction getActionArray(device, type, actionType)\n{\n    var actionArray = [];\n    var keys = Object.keys(device);\n    for (var ii = 0; ii < keys.length; ++ii)\n    {\n        if (device[keys[ii]].hasOwnProperty('type'))\n        {\n            if (device[keys[ii]].type == type)\n            {\n                if (device[keys[ii]].action == actionType)\n                {\n                    actionArray.push(device[keys[ii]]);\n                }\n            }\n        }\n    }\n    return actionArray;\n}\nfunction scalarAlarmScan(device, actionType)\n{\n    var alarmFlag = false;\n    var actionArray = getActionArray(device, 'scalar', actionType);\n    if (actionArray.length > 0)\n    {\n        for (var ii = 0; ii < actionArray.length; ++ii)\n        {\n            actionArray[ii].alarm.value = 0;\n            if (!isNaN(actionArray[ii].value))\n            {\n                if (actionArray[ii].value <= actionArray[ii].alarm.limits.low)  actionArray[ii].alarm.value = 1;\n                if (actionArray[ii].value <= actionArray[ii].alarm.limits.lolo) actionArray[ii].alarm.value = 3;\n                if (actionArray[ii].value >= actionArray[ii].alarm.limits.high) actionArray[ii].alarm.value = 2;\n                if (actionArray[ii].value >= actionArray[ii].alarm.limits.hihi) actionArray[ii].alarm.value = 4;\n            }\n            if (actionArray[ii].alarm.value > 0)  alarmFlag = true\n        }\n    }\n    return alarmFlag;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 900,
-        "y": 640,
+        "y": 600,
         "wires": [
             [
-                "d0f2dcf717dec57d"
+                "471580ca7132f1c3"
             ]
         ]
     },
     {
-        "id": "dfb8a6f09ed18976",
+        "id": "66a44093d8372be6",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Prepare MQTT topic",
         "func": "var mqttArray = msg.topic.split('/');\nvar device = \n{\n    project     : mqttArray[0],\n    deviceType  : mqttArray[1],\n    name        : mqttArray[2],\n    prop        : mqttArray[3],\n};\nreturn {topic : msg.topic, payload:{topic:'readings', mqttDevice : device, payload:msg.payload}};",
         "outputs": 1,
@@ -768,40 +1001,17 @@
         "y": 260,
         "wires": [
             [
-                "9c19993afce72c6e"
+                "b767e422fd10d4ff"
             ]
         ]
     },
     {
-        "id": "94dddf198fbea2df",
-        "type": "function",
-        "z": "ce79ef46f01ee91a",
-        "name": "Create Readings",
-        "func": "var device = flow.get('device');\nif (device.archiveNow > 0) return null;\nvar initCube                        = msg.payload.data[0];\ndevice.moveMotor.value              = msg.payload.data[1];\ndevice.resetStepReading.value       = msg.payload.data[2];\ndevice.noStepsToTurn.value          = msg.payload.data[3];\ndevice.stepForward.value            = msg.payload.data[4];\ndevice.stepDelayuS.value            = msg.payload.data[5];\ndevice.stayAwakeAfterRotation.value = msg.payload.data[6];\ndevice.resolution.value             = msg.payload.data[7];\ndevice.delayAfterRotationmS.value   = msg.payload.data[8];\ndevice.stepLocation.value           = msg.payload.data[9];\nif (msg.payload.data[10] == 0) device.stepLocation.value = -device.stepLocation.value;\n//node.warn(device);\nvar initCubeMsg = null;\nif (initCube == 1)\n{\n    initCubeMsg = {topic:\"initCube\",payload:true};\n    device.settingInProgress = 1;\n}\nreturn  [{topic:'newSettingDone', payload:true},initCubeMsg];\n",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 690,
-        "y": 640,
-        "wires": [
-            [
-                "c44e8a307e417ea3"
-            ],
-            [
-                "74c6d394f2452a62",
-                "f0c1e263384a520f"
-            ]
-        ]
-    },
-    {
-        "id": "9c19993afce72c6e",
+        "id": "b767e422fd10d4ff",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Device A web socket out",
-        "mode": "link",
         "links": [
+            "833c12de.18f4f",
             "d033193d.436d68"
         ],
         "x": 1395,
@@ -809,9 +1019,9 @@
         "wires": []
     },
     {
-        "id": "71ae80a656c00e15",
+        "id": "ba88054c55e6895d",
         "type": "inject",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "read Status",
         "props": [
             {
@@ -825,107 +1035,21 @@
         "repeat": "2",
         "crontab": "",
         "once": true,
-        "onceDelay": "15",
+        "onceDelay": "8",
         "topic": "readTable",
         "payloadType": "date",
         "x": 130,
         "y": 640,
         "wires": [
             [
-                "e7e361e5afc232d7"
+                "da97222abe2b40d4"
             ]
         ]
     },
     {
-        "id": "dfd383f6b74e0cdf",
-        "type": "modbus-flex-getter",
-        "z": "ce79ef46f01ee91a",
-        "name": "Modbus Read",
-        "showStatusActivities": true,
-        "showErrors": true,
-        "logIOActivities": false,
-        "server": "9bf2bda7e005d087",
-        "useIOFile": false,
-        "ioFile": "",
-        "useIOForPayload": false,
-        "emptyMsgOnFail": false,
-        "keepMsgProperties": false,
-        "x": 500,
-        "y": 640,
-        "wires": [
-            [],
-            [
-                "94dddf198fbea2df"
-            ]
-        ]
-    },
-    {
-        "id": "feb0c9be3896e508",
-        "type": "function",
-        "z": "ce79ef46f01ee91a",
-        "name": "Create Setting",
-        "func": "var device = flow.get('device');\nvar modbusSettingMsg = \n{\n    topic : msg.topic, \n    payload : { value: msg.payload.value, 'fc': 0x6, 'unitid': 1, 'address': -1 , 'quantity': 1 } \n}\nvar modbusMessage = false;\nswitch(msg.payload.attr)\n{\n    case 'moveMotor':\n        modbusSettingMsg.payload.address = 1;\n        modbusMessage = true;\n        break;\n    case 'resetStepReading':\n        modbusSettingMsg.payload.address = 2;\n        modbusMessage = true;\n        break;\n    case 'noStepsToTurn':\n        modbusSettingMsg.payload.address = 3;\n        modbusMessage = true;\n        break;\n    case 'stepForward':\n        modbusSettingMsg.payload.address = 4;\n        modbusMessage = true;\n        break;\n    case 'stepDelayuS':\n        modbusSettingMsg.payload.address = 5;\n        modbusMessage = true;\n        break;\n    case 'stayAwakeAfterRotation':\n        modbusSettingMsg.payload.address = 6;\n        modbusMessage = true;\n        break;\n    case 'resolution':\n        modbusSettingMsg.payload.address = 7;\n        modbusMessage = true;\n        break;\n    case 'delayAfterRotationmS':\n        modbusSettingMsg.payload.address = 8;\n        modbusMessage = true;\n        break;\n    case 'nonModbusSetting':\n        device.nonModbusSetting.value  = msg.payload.value;\n        modbusMessage = false;\n        break;\n    default:\n        break;\n}\nvar msgArray = [null,null,null];\nif (modbusMessage)\n{\n    device.settingInProgress = 1;\n    var settingInProgressMsg = {topic:'settingInProgress', payload:true};\n    msgArray = [modbusSettingMsg, settingInProgressMsg, null];\n    \n}\nelse\n{\n    device.settingInProgress = 0;\n    msgArray = [null,null,{topic:'settingDone', payload:true}];\n}\nreturn msgArray;",
-        "outputs": 3,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 180,
-        "y": 340,
-        "wires": [
-            [
-                "0fa259f96950032f"
-            ],
-            [
-                "86f177df381b40a3"
-            ],
-            [
-                "8287f2bf4cdd395b"
-            ]
-        ]
-    },
-    {
-        "id": "26de5f73575775f7",
-        "type": "modbus-flex-write",
-        "z": "ce79ef46f01ee91a",
-        "name": "Modbus set",
-        "showStatusActivities": true,
-        "showErrors": true,
-        "server": "9bf2bda7e005d087",
-        "emptyMsgOnFail": false,
-        "keepMsgProperties": false,
-        "x": 530,
-        "y": 340,
-        "wires": [
-            [],
-            [
-                "06cee1a119575ed4"
-            ]
-        ]
-    },
-    {
-        "id": "06cee1a119575ed4",
-        "type": "function",
-        "z": "ce79ef46f01ee91a",
-        "name": "Check Modbus Setting",
-        "func": "device = flow.get('device');\ndevice.settingInProgress = 0;\nswitch(msg.payload.address)\n{\n    case 1:\n        device.moveMotor.value              = msg.payload.value;\n        break;\n    case 2:\n        device.resetStepReading.value       = msg.payload.value;\n        break;\n    case 3:\n        device.noStepsToTurn.value          = msg.payload.value;\n        break;\n    case 4:\n        device.stepForward.value            = msg.payload.value;\n        break;\n    case 5:\n        device.stepDelayuS.value            = msg.payload.value;\n        break;\n    case 6:\n        device.stayAwakeAfterRotation.value = msg.payload.value;\n        break;\n    case 7:\n        device.resolution.value             = msg.payload.value;\n        break;\n    case 8:\n        device.delayAfterRotationmS.value   = msg.payload.value;\n        break;\n    default:\n        break;\n}\nreturn {topic:'settingCompleted', payload:true};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 760,
-        "y": 340,
-        "wires": [
-            [
-                "aaabe575198f3fcc"
-            ]
-        ]
-    },
-    {
-        "id": "0fa259f96950032f",
+        "id": "e6aaf196a69657ed",
         "type": "delay",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "pauseType": "delay",
         "timeout": "200",
@@ -943,42 +1067,42 @@
         "y": 340,
         "wires": [
             [
-                "26de5f73575775f7"
+                "1b507cc45c7225eb"
             ]
         ]
     },
     {
-        "id": "3dc8a08d6a891e59",
+        "id": "7b154d5258022129",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "New Setting In",
         "links": [
-            "706d51cc29f8cf61"
+            "2279121c52bce3f5"
         ],
         "x": 755,
         "y": 140,
         "wires": []
     },
     {
-        "id": "706d51cc29f8cf61",
+        "id": "2279121c52bce3f5",
         "type": "link in",
-        "z": "ce79ef46f01ee91a",
-        "name": "Modbus setting in",
+        "z": "5d451db1ecd066ae",
+        "name": "blinkybus setting in",
         "links": [
-            "3dc8a08d6a891e59"
+            "7b154d5258022129"
         ],
         "x": 55,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
-                "feb0c9be3896e508"
+                "75962be9fc0afe1c"
             ]
         ]
     },
     {
-        "id": "0244634fdb568467",
+        "id": "d00bc66c664e37ad",
         "type": "switch",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "property": "topic",
         "propertyType": "msg",
@@ -1011,23 +1135,23 @@
         "y": 160,
         "wires": [
             [
-                "3dc8a08d6a891e59"
+                "7b154d5258022129"
             ],
             [
-                "78dc1ef55e87344f"
+                "ec2707df068d867e"
             ],
             [
-                "e7ab55f925ca7596"
+                "bec945bf80e4266b"
             ],
             [
-                "661b575f3eb57a5f"
+                "cb2592988c71448b"
             ]
         ]
     },
     {
-        "id": "4eedce1128796fe2",
+        "id": "9165223b031729d4",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Filter MQTT",
         "func": "return {topic:msg.topic.split('/')[4], payload:msg.payload};",
         "outputs": 1,
@@ -1039,14 +1163,14 @@
         "y": 160,
         "wires": [
             [
-                "0244634fdb568467"
+                "d00bc66c664e37ad"
             ]
         ]
     },
     {
-        "id": "44eaf2022c128f46",
+        "id": "65023f3948589497",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Shift Msg",
         "func": "return msg.payload;",
         "outputs": 1,
@@ -1058,16 +1182,16 @@
         "y": 240,
         "wires": [
             [
-                "13622004a965559c"
+                "bed76b6938e5eed6"
             ]
         ]
     },
     {
-        "id": "13622004a965559c",
+        "id": "bed76b6938e5eed6",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Filter Websocket",
-        "func": "var inputDeviceProps = msg.payload.topic.split('/');\nvar deviceProps = flow.get('deviceProps')\nif (inputDeviceProps[0] != deviceProps.project) return null;\nif (inputDeviceProps[1] != deviceProps.deviceType) return null;\nif (inputDeviceProps[2] != deviceProps.name) return null;\nreturn {topic:msg.topic, payload:msg.payload.payload};\n",
+        "func": "var inputDeviceProps = msg.payload.topic.split('/');\nvar deviceProps = global.get('deviceProps')\nif (inputDeviceProps[0] != deviceProps.project) return null;\nif (inputDeviceProps[1] != deviceProps.deviceType) return null;\nif (inputDeviceProps[2] != deviceProps.name) return null;\nreturn {topic:msg.topic, payload:msg.payload.payload};\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1077,14 +1201,14 @@
         "y": 240,
         "wires": [
             [
-                "0244634fdb568467"
+                "d00bc66c664e37ad"
             ]
         ]
     },
     {
-        "id": "082b52af535c3321",
+        "id": "ae798caccd780261",
         "type": "json",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "property": "payload",
         "action": "obj",
@@ -1093,35 +1217,35 @@
         "y": 240,
         "wires": [
             [
-                "44eaf2022c128f46"
+                "65023f3948589497"
             ]
         ]
     },
     {
-        "id": "e7e361e5afc232d7",
+        "id": "da97222abe2b40d4",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
-        "name": "Read Modbus",
-        "func": "if (flow.get('device').settingInProgress == 1) return null;\nvar modeBusCommand = { 'fc': 0x3, 'unitid': 1, 'address': 0 , 'quantity': 11 } ;\nreturn {topic: \"readStatus\", payload:modeBusCommand};\n",
+        "z": "5d451db1ecd066ae",
+        "name": "Read BlinkyBus",
+        "func": "if (global.get('device').settingInProgress != 0) return null;\nif (global.get('cubeInit') != 0) return null;\nreturn {topic: \"readStatus\", payload:true};\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
+        "x": 300,
         "y": 640,
         "wires": [
             [
-                "dfd383f6b74e0cdf"
+                "449e730a3786f7d1"
             ]
         ]
     },
     {
-        "id": "13f60be205b89b7d",
+        "id": "19274f449654c70b",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Publish device",
-        "func": "if (!msg.payload) return null;\nvar device = flow.get('device');\nvar newMsg = \n{\n    topic: flow.get('deviceProps').project + '/' + flow.get('deviceProps').deviceType + '/' + flow.get('deviceProps').name + '/reading',\n    payload: JSON.stringify(device)\n};\nreturn  newMsg;  \n",
+        "func": "if (!msg.payload) return null;\nvar device = global.get('device');\nvar newMsg = \n{\n    topic: global.get('deviceProps').project + '/' + global.get('deviceProps').deviceType + '/' + global.get('deviceProps').name + '/reading',\n    payload: JSON.stringify(device)\n};\nreturn  newMsg;  \n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1131,94 +1255,75 @@
         "y": 220,
         "wires": [
             [
-                "dfb8a6f09ed18976",
-                "2b730378156b040d"
+                "66a44093d8372be6",
+                "85a9e035a541dff9"
             ]
         ]
     },
     {
-        "id": "2150949730b4ba06",
+        "id": "f37c408f7052167e",
         "type": "link in",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Publish Device In",
         "links": [
-            "20fe21048e9b9b39",
-            "78dc1ef55e87344f",
-            "86f177df381b40a3",
-            "aaabe575198f3fcc",
-            "5acddb44fd53cefc",
-            "10e5520c8e21050f",
-            "2728624acd3a5537",
-            "8287f2bf4cdd395b",
-            "f0c1e263384a520f"
+            "5086329ae7d0111c",
+            "ec2707df068d867e",
+            "3016fb7f7b7a1a14",
+            "74fb2b7dad5ac715",
+            "39165cac947cc7c8",
+            "5ea387fa93da7d26",
+            "acc0cad3f9e13939",
+            "807744f1ac6f99f2",
+            "8012b617bcdf425c"
         ],
         "x": 915,
         "y": 220,
         "wires": [
             [
-                "13f60be205b89b7d"
+                "19274f449654c70b"
             ]
         ]
     },
     {
-        "id": "20fe21048e9b9b39",
+        "id": "5086329ae7d0111c",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Alarm Scan out",
         "links": [
-            "2150949730b4ba06"
+            "f37c408f7052167e"
         ],
         "x": 1235,
-        "y": 640,
+        "y": 600,
         "wires": []
     },
     {
-        "id": "78dc1ef55e87344f",
+        "id": "ec2707df068d867e",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Ping Out",
         "links": [
-            "2150949730b4ba06"
+            "f37c408f7052167e"
         ],
         "x": 755,
         "y": 180,
         "wires": []
     },
     {
-        "id": "86f177df381b40a3",
+        "id": "3016fb7f7b7a1a14",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Create Setting out",
         "links": [
-            "2150949730b4ba06"
+            "f37c408f7052167e"
         ],
         "x": 315,
         "y": 380,
         "wires": []
     },
     {
-        "id": "04fec5b44db8b4da",
-        "type": "function",
-        "z": "ce79ef46f01ee91a",
-        "name": "Init cube",
-        "func": "var device = flow.get('device');\ndevice.moveMotor.value = 0;\nvar msgs = [];\nvar initCube = 0;\nmsgs[0] = { value: device.moveMotor.value,              'fc': 0x6, 'unitid': 1, 'address': 1 , 'quantity': 1 };\nmsgs[1] = { value: device.resetStepReading.value,       'fc': 0x6, 'unitid': 1, 'address': 2 , 'quantity': 1 };\nmsgs[2] = { value: device.noStepsToTurn.value,          'fc': 0x6, 'unitid': 1, 'address': 3 , 'quantity': 1 };\nmsgs[3] = { value: device.stepForward.value,            'fc': 0x6, 'unitid': 1, 'address': 4 , 'quantity': 1 };\nmsgs[4] = { value: device.stepDelayuS.value,            'fc': 0x6, 'unitid': 1, 'address': 5 , 'quantity': 1 };\nmsgs[5] = { value: device.stayAwakeAfterRotation.value, 'fc': 0x6, 'unitid': 1, 'address': 6 , 'quantity': 1 };\nmsgs[6] = { value: device.resolution.value,             'fc': 0x6, 'unitid': 1, 'address': 7 , 'quantity': 1 };\nmsgs[7] = { value: device.delayAfterRotationmS.value,   'fc': 0x6, 'unitid': 1, 'address': 8 , 'quantity': 1 };\n//must be the last!\nmsgs[8] = { value: initCube,                            'fc': 0x6, 'unitid': 1, 'address': 0 , 'quantity': 1 };\nreturn {topic : 'initCube', payload: msgs};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1060,
-        "y": 60,
-        "wires": [
-            [
-                "2134d3a9102ee7b8"
-            ]
-        ]
-    },
-    {
-        "id": "2134d3a9102ee7b8",
+        "id": "0d8a57ad8eaa24dc",
         "type": "split",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -1226,18 +1331,18 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 1190,
+        "x": 1350,
         "y": 60,
         "wires": [
             [
-                "e45b9b5f96ba6d73"
+                "e7a6b2641f32b452"
             ]
         ]
     },
     {
-        "id": "e45b9b5f96ba6d73",
+        "id": "e7a6b2641f32b452",
         "type": "delay",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "pauseType": "rate",
         "timeout": "5",
@@ -1251,39 +1356,20 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1340,
+        "x": 1500,
         "y": 60,
         "wires": [
             [
-                "647f248407479387"
+                "cbb9703188ebfd5c"
             ]
         ]
     },
     {
-        "id": "647f248407479387",
-        "type": "modbus-flex-write",
-        "z": "ce79ef46f01ee91a",
-        "name": "Modbus init",
-        "showStatusActivities": true,
-        "showErrors": true,
-        "server": "9bf2bda7e005d087",
-        "emptyMsgOnFail": false,
-        "keepMsgProperties": false,
-        "x": 1510,
-        "y": 60,
-        "wires": [
-            [],
-            [
-                "3c51c680e18abf95"
-            ]
-        ]
-    },
-    {
-        "id": "765936897007ed33",
+        "id": "3ba45e270f30f5fd",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Pause Device readings",
-        "func": "var device = flow.get('device');\ndevice.settingInProgress = 1;\nreturn msg;",
+        "func": "var device = global.get('device');\ndevice.settingInProgress = 1;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1293,46 +1379,46 @@
         "y": 520,
         "wires": [
             [
-                "811ed9a3c4b1d325",
-                "5acddb44fd53cefc"
+                "1132eb87d4aeca8f",
+                "39165cac947cc7c8"
             ]
         ]
     },
     {
-        "id": "e7ab55f925ca7596",
+        "id": "bec945bf80e4266b",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Config Out",
         "links": [
-            "23ede8e3cc8ed0c4"
+            "043c196ee7171860"
         ],
         "x": 755,
         "y": 220,
         "wires": []
     },
     {
-        "id": "23ede8e3cc8ed0c4",
+        "id": "043c196ee7171860",
         "type": "link in",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Pause Device Readings in",
         "links": [
-            "e7ab55f925ca7596"
+            "bec945bf80e4266b"
         ],
         "x": 55,
         "y": 520,
         "wires": [
             [
-                "765936897007ed33"
+                "3ba45e270f30f5fd"
             ]
         ]
     },
     {
-        "id": "811ed9a3c4b1d325",
+        "id": "1132eb87d4aeca8f",
         "type": "delay",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "pauseType": "delay",
-        "timeout": "2",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -1347,16 +1433,16 @@
         "y": 520,
         "wires": [
             [
-                "21cfacd892938a9b"
+                "43ecd9d92910128e"
             ]
         ]
     },
     {
-        "id": "21cfacd892938a9b",
+        "id": "43ecd9d92910128e",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Save config file",
-        "func": "flow.set('device',JSON.parse(JSON.stringify(msg.payload)));\nvar device = flow.get('device');\ndevice.settingInProgress = 1;\n\nreturn {topic:'deviceConfigCompleted', payload:true};",
+        "func": "global.set('device',JSON.parse(JSON.stringify(msg.payload)));\nvar device = global.get('device');\ndevice.settingInProgress = 1;\n\nreturn {topic:'deviceConfigCompleted', payload:true};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1366,18 +1452,18 @@
         "y": 520,
         "wires": [
             [
-                "c0516b9c0339c754",
-                "a33e3eb6d5d30179"
+                "bbc294c2c639b926",
+                "0d9bc65f4fb13bfd"
             ]
         ]
     },
     {
-        "id": "c0516b9c0339c754",
+        "id": "bbc294c2c639b926",
         "type": "delay",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "pauseType": "delay",
-        "timeout": "2",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -1392,16 +1478,16 @@
         "y": 520,
         "wires": [
             [
-                "a705b22a29df7c9d"
+                "73b2e093cafa6657"
             ]
         ]
     },
     {
-        "id": "a705b22a29df7c9d",
+        "id": "73b2e093cafa6657",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Continue Device readings",
-        "func": "var device = flow.get('device');\ndevice.settingInProgress = 0;\nreturn msg;",
+        "func": "var device = global.get('device');\ndevice.settingInProgress = 0;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1411,81 +1497,82 @@
         "y": 520,
         "wires": [
             [
-                "10e5520c8e21050f"
+                "5ea387fa93da7d26"
             ]
         ]
     },
     {
-        "id": "aaabe575198f3fcc",
+        "id": "74fb2b7dad5ac715",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
-        "name": "Check Modbus Setting out",
+        "z": "5d451db1ecd066ae",
+        "name": "Check blinkybus Setting out",
+        "mode": "link",
         "links": [
-            "52c3ee5d26adffbe",
-            "2150949730b4ba06"
+            "f904459111e5e5c1",
+            "f37c408f7052167e"
         ],
-        "x": 895,
+        "x": 855,
         "y": 340,
         "wires": []
     },
     {
-        "id": "52c3ee5d26adffbe",
+        "id": "f904459111e5e5c1",
         "type": "link in",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Save Settings to file in",
         "links": [
-            "aaabe575198f3fcc",
-            "a33e3eb6d5d30179",
-            "8287f2bf4cdd395b"
+            "74fb2b7dad5ac715",
+            "0d9bc65f4fb13bfd",
+            "807744f1ac6f99f2"
         ],
-        "x": 1035,
+        "x": 935,
         "y": 340,
         "wires": [
             [
-                "6506eac4254d5feb"
+                "7054755377685347"
             ]
         ]
     },
     {
-        "id": "5acddb44fd53cefc",
+        "id": "39165cac947cc7c8",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Pause Device Readings out",
         "links": [
-            "2150949730b4ba06"
+            "f37c408f7052167e"
         ],
         "x": 395,
         "y": 480,
         "wires": []
     },
     {
-        "id": "a33e3eb6d5d30179",
+        "id": "0d9bc65f4fb13bfd",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Save config file out",
         "links": [
-            "52c3ee5d26adffbe"
+            "f904459111e5e5c1"
         ],
         "x": 775,
         "y": 480,
         "wires": []
     },
     {
-        "id": "10e5520c8e21050f",
+        "id": "5ea387fa93da7d26",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Continue Devie Readings out",
         "links": [
-            "2150949730b4ba06"
+            "f37c408f7052167e"
         ],
         "x": 1175,
         "y": 520,
         "wires": []
     },
     {
-        "id": "d0f2dcf717dec57d",
+        "id": "471580ca7132f1c3",
         "type": "delay",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "pauseType": "rate",
         "timeout": "5",
@@ -1500,17 +1587,17 @@
         "allowrate": false,
         "outputs": 1,
         "x": 1120,
-        "y": 640,
+        "y": 600,
         "wires": [
             [
-                "20fe21048e9b9b39"
+                "5086329ae7d0111c"
             ]
         ]
     },
     {
-        "id": "e72bfb2a3709d790",
+        "id": "167203b9e93814de",
         "type": "inject",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Archive clock",
         "props": [
             {
@@ -1531,16 +1618,16 @@
         "y": 780,
         "wires": [
             [
-                "227a5578c26204a9"
+                "dac1482441342c0f"
             ]
         ]
     },
     {
-        "id": "227a5578c26204a9",
+        "id": "dac1482441342c0f",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Archive Pulse",
-        "func": "var device = flow.get('device');\nvar lastArchive = context.get('lastArchive');\nvar now = new Date().getTime();\nif ((now - lastArchive) <= device.arcPeriod) return null;\ncontext.set('lastArchive', now);\nreturn {topic:'archivePulse', payload:true};",
+        "func": "var device = global.get('device');\nvar lastArchive = context.get('lastArchive');\nvar now = new Date().getTime();\nif ((now - lastArchive) <= device.arcPeriod) return null;\ncontext.set('lastArchive', now);\nreturn {topic:'archivePulse', payload:true};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.set('lastArchive', new Date().getTime());",
@@ -1550,67 +1637,68 @@
         "y": 780,
         "wires": [
             [
-                "2728624acd3a5537"
+                "acc0cad3f9e13939"
             ]
         ]
     },
     {
-        "id": "2728624acd3a5537",
+        "id": "acc0cad3f9e13939",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Archive Pulse Out",
         "links": [
-            "2150949730b4ba06"
+            "f37c408f7052167e"
         ],
         "x": 475,
         "y": 780,
         "wires": []
     },
     {
-        "id": "661b575f3eb57a5f",
+        "id": "cb2592988c71448b",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Reset Out",
         "links": [
-            "74a8a195ebe277f9"
+            "d0cdc96ac00851e0"
         ],
         "x": 755,
         "y": 260,
         "wires": []
     },
     {
-        "id": "74a8a195ebe277f9",
+        "id": "d0cdc96ac00851e0",
         "type": "link in",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Reset in",
         "links": [
-            "661b575f3eb57a5f"
+            "cb2592988c71448b"
         ],
         "x": 55,
-        "y": 980,
+        "y": 1540,
         "wires": [
             [
-                "7f81d57f1839a56a"
+                "4361b57004923b96"
             ]
         ]
     },
     {
-        "id": "8287f2bf4cdd395b",
+        "id": "807744f1ac6f99f2",
         "type": "link out",
-        "z": "ce79ef46f01ee91a",
-        "name": "nonModbusSetting Out",
+        "z": "5d451db1ecd066ae",
+        "name": "nonBlinkybusSetting Out",
+        "mode": "link",
         "links": [
-            "52c3ee5d26adffbe",
-            "2150949730b4ba06"
+            "f904459111e5e5c1",
+            "f37c408f7052167e"
         ],
         "x": 315,
         "y": 420,
         "wires": []
     },
     {
-        "id": "a8095950c784cec6",
+        "id": "304912c553709267",
         "type": "inject",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Archive now",
         "props": [
             {
@@ -1631,16 +1719,16 @@
         "y": 840,
         "wires": [
             [
-                "7f0a00602991e721"
+                "9477ec95957354c1"
             ]
         ]
     },
     {
-        "id": "7f0a00602991e721",
+        "id": "9477ec95957354c1",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Single Archive Pulse",
-        "func": "var device = flow.get('device');\ndevice.archiveNow = 1;\nreturn {topic:'archivePulse', payload:true};",
+        "func": "var device = global.get('device');\ndevice.archiveNow = 1;\nreturn {topic:'archivePulse', payload:true};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.set('lastArchive', new Date().getTime());",
@@ -1650,16 +1738,16 @@
         "y": 840,
         "wires": [
             [
-                "2728624acd3a5537"
+                "acc0cad3f9e13939"
             ]
         ]
     },
     {
-        "id": "2b730378156b040d",
+        "id": "85a9e035a541dff9",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Check ArchiveNow",
-        "func": "var device = flow.get(\"device\");\nvar resetArchiveNowMsg = null;\nif (device.archiveNow > 0) resetArchiveNowMsg = {topic:\"resetArchiveNow\", payload:true};\nreturn [msg,resetArchiveNowMsg];",
+        "func": "var device = global.get(\"device\");\nvar resetArchiveNowMsg = null;\nif (device.archiveNow > 0) resetArchiveNowMsg = {topic:\"resetArchiveNow\", payload:true};\nreturn [msg,resetArchiveNowMsg];",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -1669,17 +1757,17 @@
         "y": 180,
         "wires": [
             [
-                "5eec44615361be25"
+                "0788115f268641b4"
             ],
             [
-                "86342bd64d4aed59"
+                "cd2637d1ec7015cf"
             ]
         ]
     },
     {
-        "id": "86342bd64d4aed59",
+        "id": "cd2637d1ec7015cf",
         "type": "delay",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "pauseType": "delay",
         "timeout": "1",
@@ -1697,65 +1785,536 @@
         "y": 240,
         "wires": [
             [
-                "34c3e2a42c09ea88"
+                "deb906e222a9025f"
             ]
         ]
     },
     {
-        "id": "34c3e2a42c09ea88",
+        "id": "deb906e222a9025f",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
         "name": "Reset ArchiveNow",
-        "func": "flow.get(\"device\").archiveNow = 0;\n",
+        "func": "global.get(\"device\").archiveNow = 0;\n",
         "outputs": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1670,
+        "x": 1690,
         "y": 240,
         "wires": []
     },
     {
-        "id": "dbab599e598d3f01",
-        "type": "mqtt in",
-        "z": "ce79ef46f01ee91a",
-        "name": "Subscribe DeviceA",
-        "topic": "$(MQTTDEVICEA)",
-        "qos": "0",
-        "datatype": "auto",
-        "broker": "cf9f84d0.6fba78",
-        "inputs": 0,
-        "x": 130,
-        "y": 160,
+        "id": "d8a35b4a8bd98a6b",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Allow Readings",
+        "func": "if (msg.payload.address == -1)\n{\n    global.get(\"device\").settingInProgress = 0;\n    global.set('cubeInit', 0);\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1980,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8012b617bcdf425c",
+        "type": "link out",
+        "z": "5d451db1ecd066ae",
+        "name": "Start Init Cube",
+        "links": [
+            "2150949730b4ba06",
+            "f37c408f7052167e"
+        ],
+        "x": 835,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "2fe59cbca1e055aa",
+        "type": "link out",
+        "z": "5d451db1ecd066ae",
+        "name": "begin re-init cube",
+        "links": [
+            "844b0b95c4a01a1a"
+        ],
+        "x": 1155,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "05c83c2b2034387f",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Set input filename",
+        "func": "var deviceProps = global.get('deviceProps');\nreturn {topic: 'readFile', 'filename':deviceProps.configFile};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 700,
         "wires": [
             [
-                "80e5dcb40b864249"
+                "2fe59cbca1e055aa"
             ]
         ]
     },
     {
-        "id": "5eec44615361be25",
-        "type": "mqtt out",
-        "z": "ce79ef46f01ee91a",
-        "name": "Publish Readings",
-        "topic": "",
-        "qos": "0",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "cf9f84d0.6fba78",
-        "x": 1490,
-        "y": 180,
+        "id": "844b0b95c4a01a1a",
+        "type": "link in",
+        "z": "5d451db1ecd066ae",
+        "name": "read device config in",
+        "links": [
+            "2fe59cbca1e055aa"
+        ],
+        "x": 355,
+        "y": 100,
+        "wires": [
+            [
+                "832e07b35db805b6"
+            ]
+        ]
+    },
+    {
+        "id": "fc2a756c83b6bb29",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Save flow env variables",
+        "func": "global.set(msg.topic,msg.payload);\nreturn null;",
+        "outputs": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1120,
         "wires": []
     },
     {
-        "id": "74c6d394f2452a62",
+        "id": "14b51ac09609064b",
+        "type": "inject",
+        "z": "5d451db1ecd066ae",
+        "name": "serialBufSize",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "serialBufSize",
+        "payload": "SERIALBUFSIZE",
+        "payloadType": "env",
+        "x": 130,
+        "y": 1120,
+        "wires": [
+            [
+                "fc2a756c83b6bb29"
+            ]
+        ]
+    },
+    {
+        "id": "afcb740d1ea97aa3",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Send Setting",
+        "func": "if (global.get('device').settingInProgress == -1) return null;\nglobal.get('device').settingInProgress = 1;\nvar bufsize = 4;\nvar buffer = new ArrayBuffer(bufsize);\nvar settingsView = new DataView(buffer);\nsettingsView.setUint8(0, 1, true); //setting\nsettingsView.setUint8(1, msg.payload.address, true); //address\nsettingsView.setInt16(2, msg.payload.value, true); //value\nreturn {topic:'setting',payload:Buffer.from(buffer),address:msg.payload.address};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 960,
+        "wires": [
+            [
+                "52bf6bf396d76151"
+            ]
+        ]
+    },
+    {
+        "id": "52bf6bf396d76151",
+        "type": "serial request",
+        "z": "5d451db1ecd066ae",
+        "name": "Blinky-Bus",
+        "serial": "0ffebf4de6e08b68",
+        "x": 350,
+        "y": 1000,
+        "wires": [
+            [
+                "35e867980c527555"
+            ]
+        ]
+    },
+    {
+        "id": "233bcf63326f2ec9",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Check Setting",
+        "func": "var dataView     = new DataView(new ArrayBuffer(2));\nfor (ib = 0; ib < 2; ++ib)   dataView.setUint8(ib, msg.payload[msg.address * 2 + 1 - ib]);\nvar setting = dataView.getInt16(0);\nreturn {topic:msg.topic,payload:{address:msg.address,value:setting}};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 960,
+        "wires": [
+            [
+                "27f852f1e9fb919d"
+            ]
+        ]
+    },
+    {
+        "id": "35e867980c527555",
+        "type": "switch",
+        "z": "5d451db1ecd066ae",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "setting",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "reading",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 1000,
+        "wires": [
+            [
+                "233bcf63326f2ec9"
+            ],
+            [
+                "dac22a926ee6763a"
+            ]
+        ]
+    },
+    {
+        "id": "0389830d3c86013f",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Get Reading",
+        "func": "var bufsize = 4;\nvar buffer = new ArrayBuffer(bufsize);\nvar settingsView = new DataView(buffer);\nsettingsView.setUint8(0, 0, true); //setting\nsettingsView.setUint8(1, 0, true); //address\nsettingsView.setInt16(2, 0, true); //value\n\nreturn {topic:'reading',payload:Buffer.from(buffer)};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 1040,
+        "wires": [
+            [
+                "52bf6bf396d76151"
+            ]
+        ]
+    },
+    {
+        "id": "dac22a926ee6763a",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Check Reading",
+        "func": "var serialBufSize = global.get('serialBufSize');\nvar dataView     = new DataView(new ArrayBuffer(2));\nvar dataBuffer = [];\nfor (var ii = 0; ii < (msg.payload.length / 2); ++ii)\n{\n    for (ib = 0; ib < 2; ++ib)   dataView.setUint8(ib, msg.payload[(ii * 2) + 1 - ib]);\n    dataBuffer.push( dataView.getInt16(0));\n}\nreturn {topic:msg.topic,payload:dataBuffer};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 1040,
+        "wires": [
+            [
+                "5edfe9aa9273fdd2"
+            ]
+        ]
+    },
+    {
+        "id": "4388e79a28434ab7",
+        "type": "link in",
+        "z": "5d451db1ecd066ae",
+        "name": "BlinkyBus Setting In",
+        "links": [
+            "01598091ca19387c",
+            "cdda2185f6bbab89",
+            "1b507cc45c7225eb"
+        ],
+        "x": 55,
+        "y": 960,
+        "wires": [
+            [
+                "afcb740d1ea97aa3"
+            ]
+        ]
+    },
+    {
+        "id": "c7e679ef6ea1dc8b",
+        "type": "link in",
+        "z": "5d451db1ecd066ae",
+        "name": "BlinkyBus Reading In",
+        "links": [
+            "6238aa4113faa347",
+            "449e730a3786f7d1"
+        ],
+        "x": 55,
+        "y": 1040,
+        "wires": [
+            [
+                "0389830d3c86013f"
+            ]
+        ]
+    },
+    {
+        "id": "27f852f1e9fb919d",
+        "type": "link out",
+        "z": "5d451db1ecd066ae",
+        "name": "BlinkyBus Setting Out",
+        "mode": "link",
+        "links": [
+            "51ab68bf6ce7ba49",
+            "7bd53a799dddaeaa",
+            "8567041b7be59489"
+        ],
+        "x": 755,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "5edfe9aa9273fdd2",
+        "type": "link out",
+        "z": "5d451db1ecd066ae",
+        "name": "BlinkyBus Reading Out",
+        "mode": "link",
+        "links": [
+            "a3d99d9c796d9231",
+            "c157842917d43b0f"
+        ],
+        "x": 755,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "7bd53a799dddaeaa",
+        "type": "link in",
+        "z": "5d451db1ecd066ae",
+        "name": "Init cube setting out",
+        "links": [
+            "27f852f1e9fb919d"
+        ],
+        "x": 1835,
+        "y": 60,
+        "wires": [
+            [
+                "d9fa35881768e1fe"
+            ]
+        ]
+    },
+    {
+        "id": "449e730a3786f7d1",
+        "type": "link out",
+        "z": "5d451db1ecd066ae",
+        "name": "Poll BlinkBus In",
+        "mode": "link",
+        "links": [
+            "c7e679ef6ea1dc8b"
+        ],
+        "x": 415,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "c157842917d43b0f",
+        "type": "link in",
+        "z": "5d451db1ecd066ae",
+        "name": "Poll BlinkBus Out",
+        "links": [
+            "5edfe9aa9273fdd2"
+        ],
+        "x": 555,
+        "y": 640,
+        "wires": [
+            [
+                "1b00434cb0f5bd8b"
+            ]
+        ]
+    },
+    {
+        "id": "1b507cc45c7225eb",
+        "type": "link out",
+        "z": "5d451db1ecd066ae",
+        "name": "Device Setting In",
+        "mode": "link",
+        "links": [
+            "4388e79a28434ab7"
+        ],
+        "x": 475,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8567041b7be59489",
+        "type": "link in",
+        "z": "5d451db1ecd066ae",
+        "name": "Device Setting Out",
+        "links": [
+            "27f852f1e9fb919d"
+        ],
+        "x": 615,
+        "y": 340,
+        "wires": [
+            [
+                "5549eb9eb149e919"
+            ]
+        ]
+    },
+    {
+        "id": "913453244691dcb9",
+        "type": "status",
+        "z": "5d451db1ecd066ae",
+        "name": "",
+        "scope": [
+            "52bf6bf396d76151"
+        ],
+        "x": 100,
+        "y": 1300,
+        "wires": [
+            [
+                "00189a8de707aaf8"
+            ]
+        ]
+    },
+    {
+        "id": "00189a8de707aaf8",
+        "type": "switch",
+        "z": "5d451db1ecd066ae",
+        "name": "",
+        "property": "status.fill",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "red",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "green",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 260,
+        "y": 1300,
+        "wires": [
+            [
+                "91ace44a54f5ba56"
+            ],
+            [
+                "5162e09a0964f68c"
+            ]
+        ]
+    },
+    {
+        "id": "91ace44a54f5ba56",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Serial Not Connected",
+        "func": "global.get('device').settingInProgress = -1;\nglobal.set('serialState', 0);\nreturn msg;",
+        "outputs": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nglobal.set('serialState', 0);\n",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "70b91587fdb134cc",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Reset Setting in Progress",
+        "func": "if (global.get('device').settingInProgress == -1) \n{\n    if (global.get('serialState') == 1) global.get('device').settingInProgress = 0;\n    return msg;\n}\nelse\n{\n    return null;\n}\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5162e09a0964f68c",
+        "type": "function",
+        "z": "5d451db1ecd066ae",
+        "name": "Serial Connected",
+        "func": "if (global.get('device') == undefined) return null;\nglobal.set('serialState', 1);\nif (global.get('device').settingInProgress != -1) return null\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1340,
+        "wires": [
+            [
+                "e9d253be82f72154"
+            ]
+        ]
+    },
+    {
+        "id": "e9d253be82f72154",
         "type": "delay",
-        "z": "ce79ef46f01ee91a",
+        "z": "5d451db1ecd066ae",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "7",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 1340,
+        "wires": [
+            [
+                "70b91587fdb134cc"
+            ]
+        ]
+    },
+    {
+        "id": "fb2621d0ad7475bc",
+        "type": "delay",
+        "z": "5d451db1ecd066ae",
         "name": "",
         "pauseType": "delay",
         "timeout": "3",
@@ -1769,122 +2328,286 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 880,
-        "y": 760,
-        "wires": [
-            [
-                "9ecac5e72feeaa9c"
-            ]
-        ]
-    },
-    {
-        "id": "f0c1e263384a520f",
-        "type": "link out",
-        "z": "ce79ef46f01ee91a",
-        "name": "Start Init Cube",
-        "mode": "link",
-        "links": [
-            "2150949730b4ba06"
-        ],
-        "x": 835,
+        "x": 860,
         "y": 700,
-        "wires": []
-    },
-    {
-        "id": "5aebb0b38ba2e191",
-        "type": "link in",
-        "z": "ce79ef46f01ee91a",
-        "name": "read device config in",
-        "links": [
-            "961b85c2472cee35"
-        ],
-        "x": 355,
-        "y": 100,
         "wires": [
             [
-                "c7d1bc1a67fe9dc2"
+                "05c83c2b2034387f"
             ]
         ]
     },
     {
-        "id": "961b85c2472cee35",
-        "type": "link out",
-        "z": "ce79ef46f01ee91a",
-        "name": "begin re-init cube",
-        "mode": "link",
-        "links": [
-            "5aebb0b38ba2e191"
-        ],
-        "x": 1175,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "3c51c680e18abf95",
-        "type": "function",
-        "z": "ce79ef46f01ee91a",
-        "name": "Allow Readings",
-        "func": "if (msg.payload.address == 0) flow.get(\"device\").settingInProgress = 0;\nreturn msg;",
+        "id": "c474bac98b98a3dd",
+        "type": "delay",
+        "z": "5d451db1ecd066ae",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
         "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1700,
+        "x": 1210,
         "y": 60,
         "wires": [
-            []
+            [
+                "0d8a57ad8eaa24dc"
+            ]
         ]
     },
     {
-        "id": "9ecac5e72feeaa9c",
+        "id": "fbc7abf8184c94f0",
+        "type": "catch",
+        "z": "5d451db1ecd066ae",
+        "name": "",
+        "scope": [
+            "233bcf63326f2ec9",
+            "dac22a926ee6763a",
+            "52bf6bf396d76151"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 1240,
+        "wires": [
+            [
+                "91ace44a54f5ba56"
+            ]
+        ]
+    },
+    {
+        "id": "d9fa35881768e1fe",
+        "type": "debug",
+        "z": "5d451db1ecd066ae",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1970,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "cbb9703188ebfd5c",
+        "type": "switch",
+        "z": "5d451db1ecd066ae",
+        "name": "",
+        "property": "payload.address",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "-1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1650,
+        "y": 60,
+        "wires": [
+            [
+                "cdda2185f6bbab89"
+            ],
+            [
+                "b258a5a7da88c14f"
+            ]
+        ]
+    },
+    {
+        "id": "b258a5a7da88c14f",
+        "type": "delay",
+        "z": "5d451db1ecd066ae",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1800,
+        "y": 120,
+        "wires": [
+            [
+                "d8a35b4a8bd98a6b"
+            ]
+        ]
+    },
+    {
+        "id": "a0f8a6feb2ed25bd",
+        "type": "inject",
+        "z": "5d451db1ecd066ae",
+        "name": "pm2Name",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "pm2Name",
+        "payload": "PM2NAME",
+        "payloadType": "env",
+        "x": 130,
+        "y": 1180,
+        "wires": [
+            [
+                "fc2a756c83b6bb29"
+            ]
+        ]
+    },
+    {
+        "id": "453eac3f8536ca2a",
         "type": "function",
-        "z": "ce79ef46f01ee91a",
-        "name": "Set input filename",
-        "func": "var deviceProps = flow.get('deviceProps');\nreturn {topic: 'readFile', 'filename':deviceProps.configFile};",
+        "z": "5d451db1ecd066ae",
+        "name": "Get pm2Name",
+        "func": "msg.payload = global.get(\"pm2Name\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1050,
-        "y": 760,
+        "x": 520,
+        "y": 1460,
         "wires": [
             [
-                "961b85c2472cee35"
+                "51daa01d6c79b41d"
             ]
         ]
     },
     {
-        "id": "bf552c02a1ddf527",
-        "type": "catch",
-        "z": "ce79ef46f01ee91a",
+        "id": "6d902f5b8885ea57",
+        "type": "subflow:ae10b0b7c4fa541c",
+        "z": "5d451db1ecd066ae",
         "name": "",
-        "scope": [
-            "647f248407479387"
-        ],
-        "uncaught": false,
-        "x": 1550,
-        "y": 120,
+        "x": 1060,
+        "y": 60,
         "wires": [
             [
-                "b96374fabc58144c"
+                "c474bac98b98a3dd"
             ]
         ]
     },
     {
-        "id": "b96374fabc58144c",
-        "type": "function",
-        "z": "ce79ef46f01ee91a",
-        "name": "Modbus Init fail",
-        "func": "if (msg.payload.address == 0)\n{\n    flow.get(\"device\").settingInProgress = 0;\n}\nreturn msg;",
-        "outputs": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1720,
-        "y": 120,
+        "id": "75962be9fc0afe1c",
+        "type": "subflow:d096205f9f3f50fe",
+        "z": "5d451db1ecd066ae",
+        "x": 180,
+        "y": 380,
+        "wires": [
+            [
+                "e6aaf196a69657ed"
+            ],
+            [
+                "3016fb7f7b7a1a14"
+            ],
+            [
+                "807744f1ac6f99f2"
+            ]
+        ]
+    },
+    {
+        "id": "1b00434cb0f5bd8b",
+        "type": "subflow:98acb112015948ed",
+        "z": "5d451db1ecd066ae",
+        "x": 690,
+        "y": 640,
+        "wires": [
+            [
+                "38abd8d113e0c17d"
+            ],
+            [
+                "8012b617bcdf425c",
+                "fb2621d0ad7475bc"
+            ]
+        ]
+    },
+    {
+        "id": "5549eb9eb149e919",
+        "type": "subflow:e19ee6e24a2c4f85",
+        "z": "5d451db1ecd066ae",
+        "x": 740,
+        "y": 340,
+        "wires": [
+            [
+                "74fb2b7dad5ac715"
+            ]
+        ]
+    },
+    {
+        "id": "bfc3b6efcd174789",
+        "type": "mqtt in",
+        "z": "5d451db1ecd066ae",
+        "name": "Subscribe DeviceA",
+        "topic": "$(MQTTDEVICEA)",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "cf9f84d0.6fba78",
+        "inputs": 0,
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "a182e8bb4ea20900"
+            ]
+        ]
+    },
+    {
+        "id": "0788115f268641b4",
+        "type": "mqtt out",
+        "z": "5d451db1ecd066ae",
+        "name": "Publish Readings",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cf9f84d0.6fba78",
+        "x": 1510,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "cdda2185f6bbab89",
+        "type": "link out",
+        "z": "5d451db1ecd066ae",
+        "name": "Init cube setting in",
+        "mode": "link",
+        "links": [
+            "4388e79a28434ab7"
+        ],
+        "x": 1755,
+        "y": 60,
         "wires": []
     },
     {
@@ -1960,7 +2683,8 @@
             "2f289f87.fe2ff",
             "c7f3b5bf.85c9a8",
             "916409fc.7bc138",
-            "080e8b7be1b3f16a"
+            "080e8b7be1b3f16a",
+            "32cae03eca394217"
         ],
         "x": 395,
         "y": 840,
@@ -1975,7 +2699,8 @@
             "1cdcbcd8.9514e3",
             "78ceea9e.d0b204",
             "d0d46d90.cf476",
-            "9c19993afce72c6e"
+            "9c19993afce72c6e",
+            "b767e422fd10d4ff"
         ],
         "x": 755,
         "y": 840,
