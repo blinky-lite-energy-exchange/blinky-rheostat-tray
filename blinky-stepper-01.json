@@ -9,7 +9,7 @@
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 64,
+    "value": 63,
     "unit": "/70",
     "alarm": {
       "value": 0,
@@ -29,7 +29,7 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -46,
+    "value": -47,
     "unit": "dBm",
     "alarm": {
       "value": 0,
@@ -209,7 +209,7 @@
   "stepLocation": {
     "action": "reading",
     "type": "scalar",
-    "value": 2000,
+    "value": 0,
     "unit": "unit",
     "alarm": {
       "value": 0,
