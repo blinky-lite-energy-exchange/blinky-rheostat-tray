@@ -1,15 +1,12 @@
 {
-  "deviceType": "blinky-stepper",
+  "type": "blinky-stepper",
   "name": "01",
   "arcPeriod": 60000,
-  "timeStamp": 1584283380359,
-  "lastArchive": 1584283329231,
-  "settingInProgress": 0,
-  "archiveNow": 0,
+  "timeStamp": 1660979755469,
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 63,
+    "value": 70,
     "unit": "/70",
     "alarm": {
       "value": 0,
@@ -29,7 +26,7 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -47,
+    "value": -39,
     "unit": "dBm",
     "alarm": {
       "value": 0,
@@ -89,7 +86,7 @@
   "noStepsToTurn": {
     "action": "setting",
     "type": "scalar",
-    "value": 1000,
+    "value": 100,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -109,7 +106,7 @@
   "stepForward": {
     "action": "setting",
     "type": "scalar",
-    "value": 1,
+    "value": 0,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -129,7 +126,7 @@
   "stepDelayuS": {
     "action": "setting",
     "type": "scalar",
-    "value": 1000,
+    "value": 20000,
     "unit": "uS",
     "alarm": {
       "value": 0,
