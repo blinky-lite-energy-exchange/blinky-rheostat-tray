@@ -2,11 +2,11 @@
   "type": "blinky-stepper",
   "name": "01",
   "arcPeriod": 60000,
-  "timeStamp": 1660979755469,
+  "timeStamp": 1660980252573,
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 70,
+    "value": 61,
     "unit": "/70",
     "alarm": {
       "value": 0,
@@ -26,7 +26,7 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -39,
+    "value": -49,
     "unit": "dBm",
     "alarm": {
       "value": 0,
