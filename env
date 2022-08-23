@@ -1,0 +1,11 @@
+MQTTSUBSCRIBE=blinky-lite-v4/blinky-rheostat/01/setting/#
+MQTTCLIENTID=blinky-rheostat-tray-01
+MQTTSERVERIP=aaa
+MQTTUSERNAME=bbb
+MQTTPASSWORD=ccc
+SERIALPORT=/dev/rfcomm0
+SERIALBUFSIZE=20
+PM2NAME=blinky-rheostat-01
+SPOTPRICEPING=blinky-lite-v4/espotPrice/SE4/setting/ping
+SPOTPRICEREADING=blinky-lite-v4/espotPrice/SE4/reading
+NODEREDCONFIGSECRET=ddd

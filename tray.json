@@ -1,12 +1,32 @@
 {
-  "type": "blinky-stepper",
+  "type": "blinky-rheostat",
   "name": "01",
   "arcPeriod": 60000,
-  "timeStamp": 1661236065463,
+  "timeStamp": 1661264198325,
+  "watchdog": {
+    "action": "reading",
+    "type": "scalar",
+    "value": 96,
+    "unit": "",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": -1,
+        "low": 0,
+        "high": 40000,
+        "hihi": 50000
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 47,
+    "value": 45,
     "unit": "/70",
     "alarm": {
       "value": 0,
@@ -26,7 +46,7 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -63,
+    "value": -65,
     "unit": "dBm",
     "alarm": {
       "value": 1,
@@ -46,7 +66,7 @@
   "moveMotor": {
     "action": "setting",
     "type": "scalar",
-    "value": 1,
+    "value": 0,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -86,7 +106,7 @@
   "noStepsToTurn": {
     "action": "setting",
     "type": "scalar",
-    "value": 100,
+    "value": 667,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -206,7 +226,7 @@
   "stepLocation": {
     "action": "reading",
     "type": "scalar",
-    "value": 100,
+    "value": 333,
     "unit": "unit",
     "alarm": {
       "value": 0,
@@ -215,6 +235,166 @@
         "low": -1000000,
         "high": 1000000,
         "hihi": 1000000
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
+  "opState": {
+    "action": "setting",
+    "type": "scalar",
+    "value": 2,
+    "unit": "unit",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": -1,
+        "low": -1,
+        "high": 3,
+        "hihi": 3
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
+  "startScheduleTime": {
+    "action": "setting",
+    "type": "scalar",
+    "value": 12,
+    "unit": "hr",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": -1,
+        "low": -1,
+        "high": 24,
+        "hihi": 24
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
+  "stopScheduleTime": {
+    "action": "setting",
+    "type": "scalar",
+    "value": 17,
+    "unit": "hr",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": -1,
+        "low": -1,
+        "high": 24,
+        "hihi": 24
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
+  "rheostatPos": {
+    "action": "reading",
+    "type": "scalar",
+    "value": 20,
+    "unit": "C",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": 5,
+        "low": 10,
+        "high": 65,
+        "hihi": 70
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
+  "rheostatOn": {
+    "action": "setting",
+    "type": "scalar",
+    "value": 60,
+    "unit": "C",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": 5,
+        "low": 10,
+        "high": 65,
+        "hihi": 70
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
+  "rheostatOff": {
+    "action": "setting",
+    "type": "scalar",
+    "value": 20,
+    "unit": "C",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": 5,
+        "low": 10,
+        "high": 65,
+        "hihi": 70
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
+  "rheostatState": {
+    "action": "setting",
+    "type": "scalar",
+    "value": 0,
+    "unit": "unit",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": -1,
+        "low": -1,
+        "high": 2,
+        "hihi": 2
+      },
+      "notify": {
+        "name": "",
+        "number": "",
+        "time": 0
+      }
+    }
+  },
+  "maxRate": {
+    "action": "setting",
+    "type": "scalar",
+    "value": 0.3,
+    "unit": "SEK/kW-hr",
+    "alarm": {
+      "value": 0,
+      "limits": {
+        "lolo": 0,
+        "low": 0,
+        "high": 2,
+        "hihi": 3
       },
       "notify": {
         "name": "",
