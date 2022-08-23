@@ -2,11 +2,11 @@
   "type": "blinky-rheostat",
   "name": "01",
   "arcPeriod": 60000,
-  "timeStamp": 1661264198325,
+  "timeStamp": 1661264692896,
   "watchdog": {
     "action": "reading",
     "type": "scalar",
-    "value": 96,
+    "value": 149,
     "unit": "",
     "alarm": {
       "value": 0,
@@ -26,7 +26,7 @@
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 45,
+    "value": 44,
     "unit": "/70",
     "alarm": {
       "value": 0,
@@ -46,7 +46,7 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -65,
+    "value": -66,
     "unit": "dBm",
     "alarm": {
       "value": 1,
@@ -67,7 +67,7 @@
     "action": "setting",
     "type": "scalar",
     "value": 0,
-    "unit": "unit",
+    "unit": "",
     "alarm": {
       "value": 0,
       "limits": {
@@ -87,7 +87,7 @@
     "action": "setting",
     "type": "scalar",
     "value": 0,
-    "unit": "unit",
+    "unit": "",
     "alarm": {
       "value": 0,
       "limits": {
@@ -107,7 +107,7 @@
     "action": "setting",
     "type": "scalar",
     "value": 667,
-    "unit": "unit",
+    "unit": "",
     "alarm": {
       "value": 0,
       "limits": {
@@ -127,7 +127,7 @@
     "action": "setting",
     "type": "scalar",
     "value": 0,
-    "unit": "unit",
+    "unit": "",
     "alarm": {
       "value": 0,
       "limits": {
@@ -167,7 +167,7 @@
     "action": "setting",
     "type": "scalar",
     "value": 0,
-    "unit": "unit",
+    "unit": "",
     "alarm": {
       "value": 0,
       "limits": {
@@ -187,7 +187,7 @@
     "action": "setting",
     "type": "scalar",
     "value": 0,
-    "unit": "unit",
+    "unit": "",
     "alarm": {
       "value": 0,
       "limits": {
@@ -227,7 +227,7 @@
     "action": "reading",
     "type": "scalar",
     "value": 333,
-    "unit": "unit",
+    "unit": "",
     "alarm": {
       "value": 0,
       "limits": {
@@ -246,8 +246,8 @@
   "opState": {
     "action": "setting",
     "type": "scalar",
-    "value": 2,
-    "unit": "unit",
+    "value": 0,
+    "unit": "",
     "alarm": {
       "value": 0,
       "limits": {
@@ -367,7 +367,7 @@
     "action": "setting",
     "type": "scalar",
     "value": 0,
-    "unit": "unit",
+    "unit": "",
     "alarm": {
       "value": 0,
       "limits": {
