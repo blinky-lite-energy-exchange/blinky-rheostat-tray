@@ -2,11 +2,11 @@
   "type": "blinky-rheostat",
   "name": "01",
   "arcPeriod": 60000,
-  "timeStamp": 1661264692896,
+  "timeStamp": 1662692444419,
   "watchdog": {
     "action": "reading",
     "type": "scalar",
-    "value": 149,
+    "value": 24698,
     "unit": "",
     "alarm": {
       "value": 0,
@@ -26,7 +26,7 @@
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 44,
+    "value": 51,
     "unit": "/70",
     "alarm": {
       "value": 0,
@@ -46,10 +46,10 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -66,
+    "value": -59,
     "unit": "dBm",
     "alarm": {
-      "value": 1,
+      "value": 0,
       "limits": {
         "lolo": -70,
         "low": -60,
@@ -106,7 +106,7 @@
   "noStepsToTurn": {
     "action": "setting",
     "type": "scalar",
-    "value": 667,
+    "value": 984,
     "unit": "",
     "alarm": {
       "value": 0,
@@ -226,7 +226,7 @@
   "stepLocation": {
     "action": "reading",
     "type": "scalar",
-    "value": 333,
+    "value": 166,
     "unit": "",
     "alarm": {
       "value": 0,
@@ -246,7 +246,7 @@
   "opState": {
     "action": "setting",
     "type": "scalar",
-    "value": 0,
+    "value": "2",
     "unit": "",
     "alarm": {
       "value": 0,
@@ -306,15 +306,15 @@
   "rheostatPos": {
     "action": "reading",
     "type": "scalar",
-    "value": 20,
+    "value": 10,
     "unit": "C",
     "alarm": {
       "value": 0,
       "limits": {
         "lolo": 5,
-        "low": 10,
-        "high": 65,
-        "hihi": 70
+        "low": 9,
+        "high": 70,
+        "hihi": 75
       },
       "notify": {
         "name": "",
@@ -326,15 +326,15 @@
   "rheostatOn": {
     "action": "setting",
     "type": "scalar",
-    "value": 60,
+    "value": 69,
     "unit": "C",
     "alarm": {
       "value": 0,
       "limits": {
         "lolo": 5,
         "low": 10,
-        "high": 65,
-        "hihi": 70
+        "high": 71,
+        "hihi": 75
       },
       "notify": {
         "name": "",
@@ -346,13 +346,13 @@
   "rheostatOff": {
     "action": "setting",
     "type": "scalar",
-    "value": 20,
+    "value": 10,
     "unit": "C",
     "alarm": {
       "value": 0,
       "limits": {
         "lolo": 5,
-        "low": 10,
+        "low": 9,
         "high": 65,
         "hihi": 70
       },
@@ -386,7 +386,7 @@
   "maxRate": {
     "action": "setting",
     "type": "scalar",
-    "value": 0.3,
+    "value": 0.84,
     "unit": "SEK/kW-hr",
     "alarm": {
       "value": 0,
