@@ -2,11 +2,11 @@
   "type": "blinky-rheostat",
   "name": "01",
   "arcPeriod": 60000,
-  "timeStamp": 1662692444419,
+  "timeStamp": 1662786970383,
   "watchdog": {
     "action": "reading",
     "type": "scalar",
-    "value": 24698,
+    "value": 30743,
     "unit": "",
     "alarm": {
       "value": 0,
@@ -26,10 +26,10 @@
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 51,
+    "value": 38,
     "unit": "/70",
     "alarm": {
-      "value": 0,
+      "value": 1,
       "limits": {
         "lolo": 30,
         "low": 40,
@@ -46,10 +46,10 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -59,
+    "value": -72,
     "unit": "dBm",
     "alarm": {
-      "value": 0,
+      "value": 3,
       "limits": {
         "lolo": -70,
         "low": -60,
@@ -246,7 +246,7 @@
   "opState": {
     "action": "setting",
     "type": "scalar",
-    "value": "2",
+    "value": "0",
     "unit": "",
     "alarm": {
       "value": 0,
@@ -266,7 +266,7 @@
   "startScheduleTime": {
     "action": "setting",
     "type": "scalar",
-    "value": 12,
+    "value": 4,
     "unit": "hr",
     "alarm": {
       "value": 0,
@@ -286,7 +286,7 @@
   "stopScheduleTime": {
     "action": "setting",
     "type": "scalar",
-    "value": 17,
+    "value": 7,
     "unit": "hr",
     "alarm": {
       "value": 0,
