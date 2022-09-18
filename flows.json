@@ -2003,7 +2003,7 @@
         "type": "function",
         "z": "e8d0af9ad49bce89",
         "name": "Schedule Relay Control",
-        "func": "var tray = global.get('tray');\nif (global.get('settingInProgress')) return null;\nif (global.get('deviceInit') != 0) return null;\nvar now = new Date();\nvar hours = now.getHours();\nvar rheostatState = 0;\nif (tray.startScheduleTime.value > tray.stopScheduleTime.value)\n{\n    if ((tray.startScheduleTime.value <= hours) && (minutes < 24) ) rheostatState = 1;\n    if ((0 <= hours) && (hours < tray.stopScheduleTime.value) )     rheostatState = 1;\n}\nelse\n{\n    if ((tray.startScheduleTime.value <= hours) && (hours < tray.stopScheduleTime.value) ) rheostatState = 1;\n}\nif (rheostatState ==  tray.rheostatState.value) return null;\nreturn {topic : \"setting\", payload : {cube :\"rheostatState\", value: rheostatState} };",
+        "func": "var tray = global.get('tray');\nif (global.get('settingInProgress')) return null;\nif (global.get('deviceInit') != 0) return null;\nvar now = new Date();\nvar hours = now.getHours();\nvar rheostatState = 0;\nif (tray.startScheduleTime.value > tray.stopScheduleTime.value)\n{\n    if ((tray.startScheduleTime.value <= hours) && (hours < 24) ) rheostatState = 1;\n    if ((0 <= hours) && (hours < tray.stopScheduleTime.value) )     rheostatState = 1;\n}\nelse\n{\n    if ((tray.startScheduleTime.value <= hours) && (hours < tray.stopScheduleTime.value) ) rheostatState = 1;\n}\nif (rheostatState ==  tray.rheostatState.value) return null;\nreturn {topic : \"setting\", payload : {cube :\"rheostatState\", value: rheostatState} };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",

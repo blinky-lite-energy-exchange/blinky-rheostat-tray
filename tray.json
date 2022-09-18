@@ -2,14 +2,14 @@
   "type": "blinky-rheostat",
   "name": "01",
   "arcPeriod": 60000,
-  "timeStamp": 1662786970383,
+  "timeStamp": 1663477228117,
   "watchdog": {
     "action": "reading",
     "type": "scalar",
-    "value": 30743,
+    "value": 0,
     "unit": "",
     "alarm": {
-      "value": 0,
+      "value": 1,
       "limits": {
         "lolo": -1,
         "low": 0,
@@ -23,13 +23,28 @@
       }
     }
   },
+  "priceArea": {
+    "action": "setting",
+    "type": "string",
+    "value": "SE4"
+  },
+  "alias": {
+    "action": "setting",
+    "type": "string",
+    "value": "Hot Water Control"
+  },
+  "timeZone": {
+    "action": "setting",
+    "type": "string",
+    "value": "Europe/Stockholm"
+  },
   "linkQuality": {
     "action": "reading",
     "type": "scalar",
-    "value": 38,
+    "value": 49,
     "unit": "/70",
     "alarm": {
-      "value": 1,
+      "value": 0,
       "limits": {
         "lolo": 30,
         "low": 40,
@@ -46,10 +61,10 @@
   "signalLevel": {
     "action": "reading",
     "type": "scalar",
-    "value": -72,
+    "value": -61,
     "unit": "dBm",
     "alarm": {
-      "value": 3,
+      "value": 1,
       "limits": {
         "lolo": -70,
         "low": -60,
@@ -246,7 +261,7 @@
   "opState": {
     "action": "setting",
     "type": "scalar",
-    "value": "0",
+    "value": "1",
     "unit": "",
     "alarm": {
       "value": 0,
@@ -386,7 +401,7 @@
   "maxRate": {
     "action": "setting",
     "type": "scalar",
-    "value": 0.84,
+    "value": 0.5,
     "unit": "SEK/kW-hr",
     "alarm": {
       "value": 0,
